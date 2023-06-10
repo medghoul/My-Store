@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label form="name">Name</label>
+                        <input type="text"
+                               class="form-control"
+                               id="name"
+                               formControlName="name"
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label form="imageUrl">Image URL</label>
+                        <input type="text"
+                               class="form-control"
+                               id="imageUrl"
+                               formControlName="imageUrl"
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="" class="img-responsive" style="max-height: 200px">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label form="description">Description</label>
+                        <textarea type="text"
+                                  class="form-control"
+                                  id="description"
+                                  rows="6"
+                                  formControlName="description"
+                        ></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label form="price">Price</label>
+                        <input type="number"
+                               class="form-control"
+                               id="price"
+                               formControlName="price">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button [disabled]="!productForm.valid" type="submit"
+                            class="btn btn-success">{{editMode ? 'Update' : 'Save'}}</button>
+                    <button (click)="productForm.reset()" type="button" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
